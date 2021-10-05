@@ -46,8 +46,10 @@ df = df.T
 df.to_csv('fuelprice.csv')
 
 graph = pd.read_csv("./fuelprice.csv")
-plt.barh(graph['Place'], graph['Petrol_Price'], color = 'b')
-plt.barh(graph['Place'], graph['Diesel_Price'], color = 'g')
+plt.barh(graph['Place'], graph['Petrol_Price'], color = 'b', label = "Petrol")
+plt.barh(graph['Place'], graph['Diesel_Price'], color = 'g', label = "Diesel")
 plt.xlabel("Fuel Price")
 plt.ylabel("Place")
+plt.title('Fuel Price Comaparison')
+plt.legend()
 plt.show()
